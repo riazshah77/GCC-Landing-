@@ -1,0 +1,241 @@
+:root {
+  --gold: #D3AF37;
+  --gray: #EBE9E9;
+  --black: #000000;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
+/* =================== Buttons =================== */
+.btn-secondary {
+  background-color: var(--gray);
+  border: 1px solid var(--gray);
+  color: var(--black);
+}
+
+.btn-primary {
+  background-color: var(--gold); /* Was just 'background' before */
+  border: 1px solid var(--gold); /* Add explicit border width */
+  color: #fff; /* Usually needed for contrast */
+}
+.btn-primary:hover{
+    background: var(--black);
+}
+/* =================== Header =================== */
+/* Default header style */
+.header {
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 9999;
+   background-color: #fff; 
+    will-change: transform;
+}
+
+/* Sticky class to apply when scrolling */
+.header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+header {
+  border-bottom: 1px solid var(--gray);
+  box-shadow: 0 3px 3px var(--gray);
+   margin: 0;
+  padding: 0;
+}
+body.has-sticky-header {
+  padding-top: 80px;
+}
+header a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+header .dropdown-toggle {
+  display: inline-block;
+}
+
+.right-navbar-nav li {
+  list-style-type: none;
+  position: relative;
+}
+
+.right-navbar-nav li ul.user-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  min-width: 150px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+.right-navbar-nav li ul.user-menu li a{
+    font-size: 16px;
+}
+.right-navbar-nav li ul.user-menu li {
+  border-bottom: 1px solid var(--gray);
+  font-size: 16px;
+  line-height: 30px;
+  transition: color 0.2s ease;
+}
+
+.right-navbar-nav li ul.user-menu li:hover {
+  color: var(--gold);
+}
+
+.right-navbar-nav li:hover > ul.user-menu {
+  opacity: 1;
+  visibility: visible;
+  top: 40px; /* Slide-up effect */
+}
+
+/* =================== Avatar =================== */
+.avatar-img {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  overflow: hidden;
+}
+
+.avatar-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrow */
+.arrow-down {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--black);
+}
+.right-arrow-icon{
+   display: inline-block;
+    width: 28px;
+    height: 19px;
+    background: url(../assets/images/arrow.svg);
+    background-size: 100%;
+    background-position: center;
+    margin-right: 15px;
+}
+/* =================== Sidebar Menu =================== */
+.sidebar-menu h2,
+.personal-info h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.sidebar-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu ul li {
+  list-style: none;
+  border-bottom: 1px solid var(--gray);
+  font-size: 16px;
+  line-height: 36px;
+  transition: all 0.3s ease-in;
+}
+
+.sidebar-menu ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.3s ease-in;
+}
+.sidebar-menu ul li.active,
+.sidebar-menu ul li:hover {
+  border-bottom: 1px solid var(--gold);
+}
+.sidebar-menu ul li.active a,
+.sidebar-menu ul li:hover a {
+  transform: translateX(3px);
+  color: var(--gold);
+}
+
+form .form-control{
+    padding: 12px;
+}
+/* =================== Image Placeholder =================== */
+.image-placeholder {
+  border: 2px solid var(--gold);
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder .upload-btn {
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+  padding: 0;
+  position: absolute;
+  bottom: 30%;
+  right: -15%;
+}
+.image-placeholder img{
+    width: 100%;
+}
+.invalid-feedback{
+    font-size: 14px;
+}
+footer{
+    background: var(--black);
+    color: var(--gold);
+    border-top:5px solid var(--gold);
+}
+/* =================== Upload Area =================== */
+.upload-items {
+  justify-content: flex-start;
+}
+
+/* =================== Responsive =================== */
+@media (max-width: 767px) {
+    .wide-mob{
+        width: 100%;
+        margin: auto;
+    }
+    .sidebar-menu{
+        display: none;
+    }
+  .upload-items {
+    justify-content: center;
+  }
+
+  .right-navbar-nav {
+    display: none;
+  }
+
+  .logo {
+    margin: auto;
+    text-align: center;
+  }
+
+  .image-placeholder .upload-btn {
+    right: -15%;
+    bottom: 30%;
+  }
+}
